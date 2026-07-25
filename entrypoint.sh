@@ -98,7 +98,8 @@ if [ ! -s "$config_path" ]; then
   chmod 600 "$bootstrap_patch"
   chown stalwart:stalwart "$bootstrap_patch"
 
-  gosu stalwart /usr/local/bin/stalwart --config "$config_path" &
+  STALWART_RECOVERY_MODE_PORT=8081 \
+    gosu stalwart /usr/local/bin/stalwart --config "$config_path" &
   server_pid=$!
 
   cleanup() {
@@ -111,7 +112,7 @@ if [ ! -s "$config_path" ]; then
   ready=0
   attempt=0
   while [ "$attempt" -lt 90 ]; do
-    if curl -fsS http://127.0.0.1:8080/healthz/live >/dev/null 2>&1; then
+    if curl -fsS http://127.0.0.1:8081/healthz/live >/dev/null 2>&1; then
       ready=1
       break
     fi
@@ -127,7 +128,8 @@ if [ ! -s "$config_path" ]; then
     exit 1
   fi
 
-  if ! STALWART_URL=http://127.0.0.1:8080 \
+  if ! HOME=/var/lib/stalwart \
+    STALWART_URL=http://127.0.0.1:8081 \
     STALWART_USER=admin \
     STALWART_PASSWORD="$STALWART_BOOTSTRAP_PASSWORD" \
     gosu stalwart stalwart-cli update Bootstrap --file "$bootstrap_patch" \
