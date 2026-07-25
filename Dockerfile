@@ -19,7 +19,7 @@ RUN apt-get update \
     && cd /tmp \
     && sha256sum -c "${archive}.sha256" \
     && tar -xJf "${archive}" \
-    && install -m 0755 stalwart-cli /usr/local/bin/stalwart-cli
+    && install -m 0755 "stalwart-cli-${target}/stalwart-cli" /usr/local/bin/stalwart-cli
 
 FROM stalwartlabs/stalwart:v${STALWART_VERSION}
 USER root
