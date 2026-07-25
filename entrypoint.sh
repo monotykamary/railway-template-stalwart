@@ -132,7 +132,7 @@ if [ ! -s "$config_path" ]; then
     STALWART_URL=http://127.0.0.1:8081 \
     STALWART_USER=admin \
     STALWART_PASSWORD="$STALWART_BOOTSTRAP_PASSWORD" \
-    gosu stalwart stalwart-cli update Bootstrap --file "$bootstrap_patch" \
+    /usr/local/bin/stalwart-cli update Bootstrap --file "$bootstrap_patch" \
       >"$bootstrap_stdout" 2>"$bootstrap_stderr"
   then
     echo "Stalwart bootstrap configuration failed" >&2
