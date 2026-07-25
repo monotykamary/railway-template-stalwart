@@ -2,7 +2,7 @@
 
 A Railway deployment of [Stalwart Mail & Collaboration Server](https://stalw.art/) using Railway PostgreSQL for metadata and a Railway Bucket for raw messages, attachments, Sieve scripts, and files.
 
-> The Deploy on Railway button is added only after the published route is verified.
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/stalwart-mail-s3?referralCode=ZqgrJ0)
 
 ## What this deploys
 
