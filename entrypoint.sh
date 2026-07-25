@@ -74,7 +74,7 @@ render_bootstrap() {
       searchStore: {"@type": "Default"},
       inMemoryStore: {"@type": "Default"},
       directory: {"@type": "Internal"},
-      tracer: {"@type": "Console"},
+      tracer: {"@type": "Stdout"},
       dnsServer: {"@type": "Manual"}
     }'
 }
