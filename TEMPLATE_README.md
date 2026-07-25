@@ -21,7 +21,7 @@ Internet mail requires external SMTP infrastructure. Railway TCP proxies use gen
 
 ### Implementation Details
 
-The adapter uses Stalwart's official bootstrap API and CLI. PostgreSQL and bucket credentials are wired with Railway service references. Secret values are read from environment variables and are not copied into the persistent Stalwart configuration. Railway HTTPS routes to Stalwart's HTTP listener on port 8080.
+The adapter uses Stalwart's official bootstrap API and CLI. PostgreSQL and bucket credentials are wired with Railway service references. Secret values are read from environment variables and are not copied into the persistent Stalwart configuration. Railway HTTPS and health checks are pinned to Stalwart's HTTP listener on port 8080, even if you later enable a generated-port TCP proxy.
 
 After signing in, reset the permanent `admin@MAIL_DOMAIN` account password. Remove the recovery password variable after confirming permanent administrator access if you do not want fallback recovery login.
 

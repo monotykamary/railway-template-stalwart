@@ -29,7 +29,7 @@ Railway does not expose arbitrary services on fixed public TCP ports. Its TCP pr
 
 - Use an external inbound SMTP gateway that can relay to a custom host and port.
 - Use an outbound SMTP relay unless you are on Railway Pro and have deliberately configured direct SMTP delivery and deliverability controls.
-- IMAP, submission, POP3, or ManageSieve can be exposed through a Railway TCP proxy, but clients must use Railway's generated port. A service currently has one public TCP proxy.
+- IMAP, submission, POP3, or ManageSieve can be exposed through a Railway TCP proxy, but clients must use Railway's generated port. A service currently has one public TCP proxy. The template pins `PORT=8080` so adding a TCP proxy does not redirect Railway's HTTP health check to a mail port.
 - Railway terminates HTTPS for the administration, JMAP, CalDAV, CardDAV, and WebDAV endpoint on port 8080.
 
 ## Persistence and backups
