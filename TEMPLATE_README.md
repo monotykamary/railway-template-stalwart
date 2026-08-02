@@ -2,7 +2,7 @@
 
 ## About Hosting Stalwart
 
-Stalwart is an all-in-one mail and collaboration server supporting SMTP, JMAP, IMAP, POP3, CalDAV, CardDAV, and WebDAV. This template pins Stalwart Server v0.16.14 and configures its supported S3 blob backend to use a Railway Bucket. Raw messages, attachments, Sieve scripts, and files go to object storage; Railway PostgreSQL holds accounts, mailbox state, indexes, and server configuration.
+Stalwart is an all-in-one mail and collaboration server supporting SMTP, JMAP, IMAP, POP3, CalDAV, CardDAV, and WebDAV. This template pins Stalwart Server v0.16.15 and configures its supported S3 blob backend to use a Railway Bucket. Raw messages, attachments, Sieve scripts, and files go to object storage; Railway PostgreSQL holds accounts, mailbox state, indexes, and server configuration.
 
 ## Common Use Cases
 

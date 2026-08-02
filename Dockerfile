@@ -1,5 +1,5 @@
-ARG STALWART_VERSION=0.16.14
-ARG STALWART_CLI_VERSION=1.0.11
+ARG STALWART_VERSION=0.16.15
+ARG STALWART_CLI_VERSION=1.0.12
 
 FROM debian:trixie-slim AS cli
 ARG TARGETARCH
@@ -27,5 +27,6 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends gosu jq \
     && rm -rf /var/lib/apt/lists/*
 COPY --from=cli /usr/local/bin/stalwart-cli /usr/local/bin/stalwart-cli
-COPY --chmod=0755 entrypoint.sh /usr/local/bin/railway-entrypoint
+COPY entrypoint.sh /usr/local/bin/railway-entrypoint
+RUN chmod 0755 /usr/local/bin/railway-entrypoint
 ENTRYPOINT ["/usr/local/bin/railway-entrypoint"]
