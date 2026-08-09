@@ -37,7 +37,6 @@ render_bootstrap() {
     --arg s3Bucket "$S3_BUCKET" \
     --arg s3Region "$S3_REGION" \
     --arg s3Endpoint "$S3_ENDPOINT" \
-    --arg s3AccessKey "$S3_ACCESS_KEY_ID" \
     '{
       serverHostname: $serverHostname,
       defaultDomain: $defaultDomain,
@@ -62,7 +61,10 @@ render_bootstrap() {
           customRegion: $s3Region
         },
         bucket: $s3Bucket,
-        accessKey: $s3AccessKey,
+        accessKey: {
+          "@type": "EnvironmentVariable",
+          variableName: "S3_ACCESS_KEY_ID"
+        },
         secretKey: {
           "@type": "EnvironmentVariable",
           variableName: "S3_SECRET_ACCESS_KEY"

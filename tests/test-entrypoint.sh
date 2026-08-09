@@ -29,6 +29,7 @@ printf '%s' "$output" | jq -e '
   .defaultDomain == "example.test" and
   .requestTlsCertificate == false and
   .dataStore.authSecret.variableName == "POSTGRES_PASSWORD" and
+  .blobStore.accessKey.variableName == "S3_ACCESS_KEY_ID" and
   .blobStore.secretKey.variableName == "S3_SECRET_ACCESS_KEY" and
   .blobStore.verifyAfterWrite == true and
   (.blobStore | tostring | contains("secret\"$&\\value") | not) and
@@ -37,6 +38,10 @@ printf '%s' "$output" | jq -e '
 
 if printf '%s' "$output" | grep -F "$POSTGRES_PASSWORD" >/dev/null; then
   echo 'PostgreSQL secret leaked into bootstrap JSON' >&2
+  exit 1
+fi
+if printf '%s' "$output" | grep -F "$S3_ACCESS_KEY_ID" >/dev/null; then
+  echo 'S3 access key leaked into bootstrap JSON' >&2
   exit 1
 fi
 if printf '%s' "$output" | grep -F "$S3_SECRET_ACCESS_KEY" >/dev/null; then
