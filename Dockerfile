@@ -1,4 +1,4 @@
-ARG STALWART_VERSION=0.16.18
+ARG STALWART_VERSION=0.16.19
 ARG STALWART_CLI_VERSION=1.0.12
 
 FROM debian:trixie-slim AS cli
@@ -21,7 +21,7 @@ RUN apt-get update \
     && tar -xJf "${archive}" \
     && install -m 0755 "stalwart-cli-${target}/stalwart-cli" /usr/local/bin/stalwart-cli
 
-FROM docker.io/stalwartlabs/stalwart:v${STALWART_VERSION}@sha256:9ed1d343243b7aa72969e372a7240b7ddea07730781d4b68a0dc3d8d51c418bb
+FROM docker.io/stalwartlabs/stalwart:v${STALWART_VERSION}@sha256:0bb2e1fa01ce8dfc8d8dc1006ed11bd7359be6144fd0f8a950b0c7bf5e9a9b6c
 USER root
 RUN apt-get update \
     && apt-get install -y --no-install-recommends gosu jq \
