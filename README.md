@@ -6,7 +6,7 @@ A Railway deployment of [Stalwart Mail & Collaboration Server](https://stalw.art
 
 ## What this deploys
 
-- Stalwart Server `v0.16.21`
+- Stalwart Server `v0.16.22`
 - Stalwart CLI `v1.0.12` for first-boot configuration
 - Railway PostgreSQL for accounts, mailbox state, indexes, and configuration
 - Railway Bucket through Stalwart's S3-compatible blob store
@@ -43,7 +43,7 @@ Version bumps are deliberate. Update the pinned server and CLI versions in `Dock
 ## Sources and licensing
 
 - [Stalwart source](https://github.com/stalwartlabs/stalwart)
-- [Stalwart v0.16.21](https://github.com/stalwartlabs/stalwart/releases/tag/v0.16.21)
+- [Stalwart v0.16.22](https://github.com/stalwartlabs/stalwart/releases/tag/v0.16.22)
 - [Stalwart documentation](https://stalw.art/docs/)
 - [Stalwart CLI v1.0.12](https://github.com/stalwartlabs/cli/releases/tag/v1.0.12)
 
