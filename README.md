@@ -6,8 +6,8 @@ A Railway deployment of [Stalwart Mail & Collaboration Server](https://stalw.art
 
 ## What this deploys
 
-- Stalwart Server `v0.16.24`
-- Stalwart CLI `v1.0.12` for first-boot configuration
+- Stalwart Server `v0.16.26`
+- Stalwart CLI `v1.0.13` for first-boot configuration
 - Railway PostgreSQL for accounts, mailbox state, indexes, and configuration
 - Railway Bucket through Stalwart's S3-compatible blob store
 - A small persistent volume for `/etc/stalwart/config.json`
@@ -43,8 +43,8 @@ Version bumps are deliberate. Update the pinned server and CLI versions in `Dock
 ## Sources and licensing
 
 - [Stalwart source](https://github.com/stalwartlabs/stalwart)
-- [Stalwart v0.16.24](https://github.com/stalwartlabs/stalwart/releases/tag/v0.16.24)
+- [Stalwart v0.16.26](https://github.com/stalwartlabs/stalwart/releases/tag/v0.16.26)
 - [Stalwart documentation](https://stalw.art/docs/)
-- [Stalwart CLI v1.0.12](https://github.com/stalwartlabs/cli/releases/tag/v1.0.12)
+- [Stalwart CLI v1.0.13](https://github.com/stalwartlabs/cli/releases/tag/v1.0.13)
 
 This adapter is MIT licensed. Stalwart and the derived icon retain their upstream licensing; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
