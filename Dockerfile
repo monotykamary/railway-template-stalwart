@@ -1,4 +1,4 @@
-ARG STALWART_VERSION=0.16.26
+ARG STALWART_VERSION=0.16.27
 ARG STALWART_CLI_VERSION=1.0.13
 
 FROM debian:13.7-slim@sha256:a29215f6a35e51e22adffa17f89e9d2ef06214e64a2bad10d765c46aea49f11f AS cli
@@ -21,7 +21,7 @@ RUN apt-get update \
     && tar -xJf "${archive}" \
     && install -m 0755 "stalwart-cli-${target}/stalwart-cli" /usr/local/bin/stalwart-cli
 
-FROM docker.io/stalwartlabs/stalwart:v${STALWART_VERSION}@sha256:254ce5d7f3dbe4bb628ce2c7912e664ecb1c3466db79907f4a44d9a00117776b
+FROM docker.io/stalwartlabs/stalwart:v${STALWART_VERSION}@sha256:c429b311c93db5606598abc1c68225a85a6953183848ae01bee9c6a98885836c
 USER root
 RUN apt-get update \
     && apt-get install -y --no-install-recommends gosu jq \
